@@ -9,8 +9,10 @@ var stand1,stand2;
 var ball;
 var slingShot;
 var score = 0;
+var bgimg;
 
 function preload(){
+  BG_IMAGE();
 }
 function setup() {
   createCanvas(900,500);
@@ -164,12 +166,12 @@ async function BG_IMAGE()
   var ResponseJson = await Response.json();
   var DateTime = ResponseJson.datetime;
   var hour = DateTime.slice(11,13);
-  if(hour>=6 && hour<=18)
+  if(hour>=06 && hour<=18)
   {
    bg="white";
   }
   else{
     bg = "black";
    }
-   bgimg = background(bg);
-}
+   bgimg = bg;
+  }
